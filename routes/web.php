@@ -22,3 +22,9 @@ Route::get('/danh_sach_lop',[LopController::class,'danh_sach_lop'])->name("danh_
 Route::get('/them-lop',[LopController::class,'them_lop'])->name('them-lop');
 //Xử lý thêm lớp lên db
 Route::post('/them-lop',[LopController::class,'them_lop_xu_ly'])->name('them_lop_xu_ly');
+//Hiển thị form sửa lớp
+Route::get('/sua-lop/{id}',[LopController::class,'sua_lop'])->name('sua_lop');
+//Xử lý sửa lớp trên db
+Route::post('/sua-lop/{id}',[LopController::class,'sua_lop_xu_ly'])->name('sua_lop_xu_ly');
+//Xóa lớp
+Route::get('/xoa-lop/{id}',[LopController::class,'xoa_lop'])->name('xoa_lop');

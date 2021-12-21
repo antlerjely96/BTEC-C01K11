@@ -21,4 +21,22 @@ class LopController extends Controller
         $lop->them_lop_xu_ly();
         return Redirect::route("danh_sach_lop");
     }
+    public function sua_lop(Request $request){
+        $id = $request->id;
+        $lop = LopModel::sua_lop($id);
+        return view('sua-lop',compact('lop'));
+    }
+    public function sua_lop_xu_ly(Request $request){
+        $lop = new LopModel();
+        $lop->id = $request->id;
+        $lop->ten_lop = $request->ten_lop;
+        $lop->sua_lop_xu_ly();
+        return Redirect::route("danh_sach_lop");
+    }
+    public function xoa_lop(Request $request){
+        $lop = new LopModel();
+        $lop->id = $request->id;
+        $lop->xoa_lop();
+        return Redirect::route("danh_sach_lop");
+    }
 }
